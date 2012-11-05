@@ -1,0 +1,86 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Topologia działania torusa: 30 października 2012 \hfill}
+ 
+\begin{document}
+ \begin{twierdzeniebd}[Iwasawa]
+  $G$ spójna grupa Lie, to $G$ zawiera podgrupy $K$ maksymalną zwartą, $A$ abelową ($\simeq (\mb{R}_+^\ast)^n$), $N$ nilpotentną ($N_0=N, N_n=[N_{n-1},N_{n-1}], N_k=\{1\}$; $N \approx \mb{R}^n$ jako przestrzeń topologiczna) takie, że $K \times A \times N \to G, (k,a,n) \mapsto k \cdot a \cdot n$ jest homeomorfizmem.
+ \end{twierdzeniebd}
+ 
+ \begin{przyklad}
+  $GL_n(\mb{R}) = O(n) \times \{\text{górnotrójkątne}\} = O(n) \times (\mb{R}_+^\ast)^n \times \{\text{ściśle górnotrójkątne}\}$
+ \end{przyklad}
+ 
+ \begin{uwaga}
+  $G \simeq_{htp} K$, bo $G/K = AN \simeq_{top} \mb{R}^n$
+ \end{uwaga}
+ 
+ \begin{wniosek}
+  $BG \simeq_{htp} BK$
+ \end{wniosek}
+ 
+ \begin{twierdzenie}
+  $H^\ast(BGL_n(\mb{C})) \to H^\ast(BT)$ jest monomorfizmem, którego obraz jest równy $H^\ast(BT)^{\Sigma_n}$.
+ \end{twierdzenie}
+ 
+ \begin{wniosek}
+  $H^\ast(BGL_n(\mb{C})) \simeq \mb{Z}[t_1, \ldots, t_n]^{\Sigma_n} = \mb{Z}[\sigma_1, \ldots, \sigma_n]$, w tym izomorfizmie $c_i \mapsto \sigma_i$, gdzie $c_i$ to \emph{$i$-ta klasa Cherna}.
+ \end{wniosek}
+ 
+ \begin{lemat}
+  Niech $F_n=\{ 0 \subset V_1 \subset \ldots \subset V_n = V: \dim V_i=i\} \subset\prod_{i=1}^{n-1} \Grass_i(\mb{C}^n), L_i = V_i/V_{i-1}$, wtedy $c_1(L_i^\ast)$ generują $H^\ast(F_n)$.
+ \end{lemat}
+ 
+ \begin{definicja}
+  $L=f^\ast(\gamma^\ast)$ gdzie $\gamma^\ast=\mc{O}(1)$ wiązka tautologiczna na $\mb{P}^\infty$.
+  Wtedy niech $c_1(L) = f^\ast(x)$, gdzie $x \in H^2(\mb{P}^\infty)$ wyróżniony generator zadany przez hiperpowierzchnię.
+ \end{definicja}
+ 
+ \begin{twierdzenie}[Leray-Hirsch]
+  Niech $F \hookrightarrow E \to B$ lokalnie trywialne rozwłóknienie, $H^\ast(F)$ wolne.
+  Załóżmy, że istnieje transformacja $\phi: H^\ast(F) \to H^\ast(E)$ rozszczepiająca $i^\ast$, czyli $i^\ast \phi = \mr{id}_{H^\ast(F)}$.
+  Wtedy kohomologie $H^\ast(E) \simeq H^\ast(B) \otimes H^\ast(F)$ (jako $H^\ast(B)$-moduły), $p^\ast b \cup \phi(f) \mapsfrom b \otimes f$.
+ \end{twierdzenie}
+ 
+ \begin{uwaga}
+  Po drodze dostajemy, że $H^\ast(F_n) = H^\ast(BT) \otimes_{H^\ast(BGL_n(\mb{C}))} \mb{Z} = \mb{Z}[t_1, \ldots, t_n]/(\sigma_1, \ldots, \sigma_n)$.
+ \end{uwaga}
+ 
+ \begin{wniosek}
+  $\mr{NatTrans}(G\text{-wiązki},H^\ast(\cdot, \mb{Z})) = H^\ast(BG)$
+ \end{wniosek}
+ 
+ \begin{wniosek}
+  Dla $G=GL_n(\mb{C})$, $H^\ast(BG)=\mb{Z}[c_1, \ldots, c_n], c_i(E)=\sigma_i(t_1, \ldots, t_n)$, jeśli zaś $E=L_1 \oplus \ldots \oplus L_n$, to $t_i=c_1(L_i)$.
+ \end{wniosek}
+ 
+ \begin{wniosek}
+  $c_n(E)=0$ jeśli $L_1$ jest trywialna.
+ \end{wniosek}
+ 
+ \begin{stwierdzenie}
+  Jeśli wiązka $E$ ma przekrój, to $c_n(E)=0$.
+ \end{stwierdzenie}
+ 
+ \begin{stwierdzenie}
+  $E \to X$ wiązka, Istnieje przestrzeń $Y$ i odwzorowanie $f:Y \to X$ takie, że $E$ rozszczepia się na wiązki liniowe nad $Y$, a odwzorowanie $f^\ast:H^\ast(X) \to H^\ast(Y)$ jest monomorfizmem.
+ \end{stwierdzenie}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 
+ 
