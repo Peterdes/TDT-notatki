@@ -1,0 +1,215 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Topologia działania torusa: 9 października 2012 \hfill}
+ 
+\begin{document}
+ Konstrukcje ekwiwariantne.
+
+ \begin{definicja}[skręcony produkt]
+  Niech $G$ działa z prawej na $X$, z lewej na $Y$. Wtedy $X \times_G Y = X \times Y / \sim$, gdzie $(xg, y) \sim (x,gy)$, albo $=X \times Y / G$, gdzie $g(x,y) = (xg^{-1}, gy)$.
+ \end{definicja}
+ 
+ \begin{definicja}[przestrzeń z indukowanym działaniem]
+  $H \subset G, X$ to $H$-przestrzeń, wtedy $G \times_H X$ to $G$-przestrzeń.
+ \end{definicja}
+ 
+ \begin{uwaga}
+  $X$ lewa $G$-przestrzeń, prawa $H$-przestrzeń, $Y$ lewa $H$-przestrzeń, to $X \times_H Y$ ma strukturę $G$-przestrzeni.
+ \end{uwaga}
+ 
+ \begin{definicja}[produkt włóknisty]\raisebox{-0.5\height}{
+  \begin{tikzpicture}[scale=1.4]
+   \node (Prod) at (0,0.7) {$Y \times_X Z$};
+   \node (Y) at (1,0.7) {$Y$};
+   \node (Z) at (0,0) {$Z$};
+   \node (X) at (1,0) {$X$};
+   \path[->,>=angle 90]
+   (Y) edge node[right]{$f$} (X)
+   (Z) edge node[above]{$g$} (X)
+   (Prod) edge node[above]{} (Y)
+   (Prod) edge node[right]{} (Z);
+  \end{tikzpicture}}, $Y \times_X Z = \{ (y,z) \in Y \times Z: f(y) = g(z) \}$.
+ Jeśli $X,Y,Z$ to $G$-przestrzenie, a odwzorowania sa ekwiwariantne, to $Y \times_X Z$ ma naturalne działanie.
+ \end{definicja}
+ 
+ \begin{definicja}[przestrzeń indukowana]\raisebox{-0.5\height}{
+  \begin{tikzpicture}[scale=1]
+   \node (PB) at (0,1) {$f^\ast X = Y \times_{X/G} X$};
+   \node (X) at (2.5,1) {$X$};
+   \node (Y) at (0,0) {$Y$};
+   \node (XG) at (2.5,0) {$X/G$};
+   \path[->,>=angle 90]
+   (X) edge node[right]{} (XG)
+   (Y) edge node[above]{$f$} (XG)
+   (PB) edge node[above]{} (X)
+   (PB) edge node[right]{} (Y);
+  \end{tikzpicture}}
+ \end{definicja}
+ 
+ \begin{definicja}[$G$-wiązki główne]
+  $G$ działa na $E$ z prawej, działanie jest wolne, a $E \to E/G=B$ jest lokalnie trywialnym rozwłóknieniem, to $E\to B$ to $G$-wiązka główna.
+ \end{definicja}
+ 
+ \begin{twierdzeniebd}
+  $E$ normalna, $G$ zwarta, to $E \to E/G$ jest lokalnie trywialne.
+ \end{twierdzeniebd}
+ 
+ \begin{definicja}[lokalnie trywialne rozwłóknienie]
+  $E \to B$ lokalnie trywialne rozwłóknienie, jeśli istnieje pokrycie $U_i$ bazy $B$ takie, że $E|_{U_i} = E \times_B U_i \approx U_i \times G$.
+ \end{definicja}
+ 
+ \begin{uwaga}
+  Zauważmy, że w takiej sytuacji jak wyżej,
+  
+  \begin{tikzpicture}[scale=1.5]
+   \node (Ei) at (0,1) {$E|_{U_i}$};
+   \node (Eij) at (3,1) {$E|_{U_i \cap U_j}$};
+   \node (Ej) at (6,1) {$E|_{U_j}$};
+   \node (Ui) at (0,0) {$U_i \times G$};
+   \node (Uiji) at (2,0) {$(U_i \cap U_j) \times G$};
+   \node (Uijj) at (4,0) {$(U_i \cap U_j) \times G$};
+   \node (Uj) at (6,0) {$U_j \times G$};
+   \node (gi) at (2,-0.5) {$(u,g)$};
+   \node (gj) at (4,-0.5) {$(u,g_{ij}g)$};
+   \path[->,=>angle 90]
+   (Ei) edge (Ui)
+   (Eij) edge (Uiji)
+   (Eij) edge (Uijj)
+   (Ej) edge (Uj)
+   (Uiji) edge (Uijj);
+   \path[|->,=>angle 90]
+   (gi) edge (gj);
+   \path[right hook->,=>angle 90]
+   (Ei) edge (Eij)
+   (Ui) edge (Uiji);
+   \path[left hook->,=>angle 90]
+   (Ej) edge (Eij)
+   (Uj) edge (Uijj);
+  \end{tikzpicture}
+
+ \end{uwaga}
+ 
+ \begin{definicja}[kocykl definiujący]
+  \emph{Kocykl definiujący} to $(i,j) \mapsto g_{i,j}$ , gdzie $g_{ij}:U_i \cap U_j \to G$.
+ \end{definicja}
+ 
+ \begin{stwierdzenie}
+  $\{g_{ij}\}$ spełniają warunek kocyklu $g_{ij} g_{jk} = g_{ik}$.
+ \end{stwierdzenie}
+ 
+ \begin{uwaga}
+  Kocykl daje $G$-wiązkę.
+ \end{uwaga}
+ 
+ \begin{uwaga}
+  $U_i \subset B$, $E|_{U_i}$ trywialna $\simeq U_i \times G$, to zamiana trywializacji $U_i \times G \to U_i \times G$ to po prostu $(u,g) \mapsto (u,h_i g)$, gdzie $h_i:U_i \to G$. Zmiana trywializacji na inną daje nowy kocykl $g_{ij}' = h_i^{-1} g_{ij} h_j$.
+ \end{uwaga}
+ 
+ \begin{stwierdzenie}
+  Klasy izomorfizmu $G$-wiązek głównych odpowiadają granicy po pokryciach z kocykli podzielonych przez relację kobrzegowości, a to jest izomorficzne z $H^1(B, C(B,G))$, ale to wszystko tak na boku.
+ \end{stwierdzenie}
+ 
+ \begin{definicja}[przekształcenie wiązek głównych] $G$-niezmiennicze $f$, \raisebox{-0.4\height}{
+  \begin{tikzpicture}[scale=1]
+   \node (E) at (0,1) {$E$};
+   \node (F) at (1.6,1) {$F$};
+   \node (B) at (0.8,0) {$B$};
+   \path[->,=>angle 90]
+   (E) edge (B)
+   (F) edge (B)
+   (E) edge node[above]{$f$} (F);
+  \end{tikzpicture}}.
+
+ \end{definicja}
+
+ 
+ \begin{stwierdzenie}
+  Każde przekształcenie wiązek głównych jest izomorfizmem.
+ \end{stwierdzenie}
+ 
+ \begin{lemat}
+  $E, F \to B \times I$ wiązki główne, $B$ parazwarte, jeśli $E|_{B \times \{0\}} \simeq F|_{B \times \{0\}}$, to $E \simeq F$.
+ \end{lemat}
+ 
+ W dowodzie powyższego założyliśmy, że $B$ to CW-kompleks.
+ 
+ \begin{wniosek}
+  \raisebox{-0.6\height}{\begin{tikzpicture}
+   \node (PB) at (0,1) {$f^\ast E$};
+   \node (E) at (2,1) {$E$};
+   \node (Y) at (0,0) {$Y$};
+   \node (X) at (2,0) {$X$};
+   \path[->,>=angle 90]
+   (E) edge node[right]{} (X)
+   (Y) edge node[above]{$f$} (X)
+   (PB) edge node[above]{} (E)
+   (PB) edge node[right]{} (Y);
+  \end{tikzpicture}}, $f^\ast E$ jest $G$-wiązką główną nad $Y$.
+ \end{wniosek}
+ 
+ \begin{twierdzenie}
+  $f \simeq g:Y \to X \implies f^\ast E \simeq g^\ast E$.
+ \end{twierdzenie}
+ 
+ \begin{wniosek}
+  Przyporządkowanie $X \mapsto$ zbiór klas izomorfizmu wiązek jest funktorem kontrawariantnym $hTop \to Set$.
+ \end{wniosek}
+ 
+ \begin{twierdzeniebd}
+  Ten funktor jest ``prawie'' reprezentowalny, tzn. istnieje przestrzeń $BG$ (typu CW-kompleks, jeśli $G$ Lie) taka, że klasy homotopii $[X,BG] = $ klasy izomorfizmu $G$-wiązek głównych dla zwartego CW-kompleksu $X$.
+ \end{twierdzeniebd}
+ 
+ \begin{przyklad}
+  $BS^1 = \mb{CP}^\infty$
+  
+  $BU(n) = \Grass_n(\mb{C}^\infty) = \bigcup_N \Grass_n(\mb{C}^N)$
+ \end{przyklad}
+ 
+ Lokalna struktura $G$-przestrzeni
+ 
+ \begin{definicja}[tuba, slajs]
+  $x \in X$, \emph{tubą} wokół orbity nazywamy stoczenie $U \supset Gx$ homeomorficzne z $G \times_{G_x} S$, gdzie $S \subset X, x \in S$ i $S$ jest $G_x$-niezmiennicze. $S$ nazywamy \emph{slajsem}.
+ \end{definicja}
+ 
+ \begin{twierdzenie}[Mostov, Wasserman]
+  Jeśli $X$ normalna, $G$ zwarta Lie, to każda orbita ma tubę i slajs.
+ \end{twierdzenie}
+ 
+ \begin{lemat}
+  Niech $V \to G/H$ wiązka wektorowa z działaniem $G$, która jest liniowa na włóknach (tj. \emph{$G$-wiązka wektorowa}), wtedy istnieje reprezentacja grupy $H$ na $W$ taka, że $V \approx G \times_H W \to G/H$.
+ \end{lemat}
+ 
+ \begin{twierdzeniebd}[o otoczeniu tubularnym]
+  $Y \subset X$ podrozmaitość zwarta, to istnieje $\varepsilon>0$ taki, że $exp: NY \to X$ jest homeomorfizmem na wiązce dysków $D_\varepsilon \subset NY=TY^\perp \subset TX|_Y$.
+ \end{twierdzeniebd}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,144 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Topologia działania torusa: 1 października 2012 \hfill}
+ 
+\begin{document}
+ Będziemy się zajmować działaniami grup topologicznych na rozmaitościach, rozmaitościach z osobliwościami itp., a interesować nas będą grupy zwarte (raczej Liego) i algebraiczne, a w szczególności reduktywne, takie jak (wypisane w parach, zwarta w algebraicznej): $S^1 \subset \mb{C}^\ast, (S^1)^n \subset (\mb{C}^\ast)^n, SO(n) \subset SO(n,\mb{C}), O(n) \subset O(n, \mb{C}), U(n) \subset GL(n), SU(n) \subset SL(n), \ldots$.
+ 
+ \begin{definicja}
+  $G$ algebraiczna jest \emph{reduktywna}, jeśli istnieje $K \subset G$ zwarta (tj. Liego), która jest gęsta w topologii Zariskiego.
+ \end{definicja}
+ 
+ \begin{przyklad}
+  $\mb{C}_+$ (z dodawaniem) nie jest reduktywna, podobnie jak grupa macierzy górnotrójkątnych.
+ \end{przyklad}
+ 
+ \begin{uwaga}
+  Skądinąd znana jest klasyfikacja grup reduktywnych. Każda taka spójna grupa jest postaci $G = \bigslant{\tilde{G}}{A}$, gdzie $\tilde{G} = G_1 \times \ldots \times G_n \times T$; $T=(S^1)^n$ lub $T=(\mb{C}^\ast)^n$ w zależności od tego, czy $G$ jest zwarta, czy algebraiczna; $G_i$ to jednospójne grupy proste (tj. jedyne dzielniki normalne są dyskretne).
+  
+  Wśród grup prostych istnieją 4 serie grup i 5 grup wyjątkowych: $SU(n) \subset SL(n); SO(2n) \subset SO(2n, \mb{C}); SO(2n+1) \subset SO(2n+1, \mb{C}); Sp(n) \subset Sp(n,\mb{C}); G_2; F_4; E_6, E_7, E_8$.
+ \end{uwaga}
+ 
+ \begin{twierdzeniebd}
+  Grupa zwarta bez podgrupy $p$-adycznej to grupa Liego.
+ \end{twierdzeniebd}
+ 
+ \begin{uwaga}
+  Jednospójne grupy Lie odpowiadają algebrom Lie.
+ \end{uwaga}
+ 
+ \begin{uwaga}
+  Na grupie Lie mamy inwolucję Cartana (macierzowo $A \mapsto \bar{A}^T$) i dla grupy reduktywnej $K=G^\phi$ to podgrupa zwarta gęsta w topologii Zariskiego.
+ \end{uwaga}
+ 
+ \begin{cytat}
+  To nie wynika z ogólnych faktów, to jest efekt przyrodniczy.
+ \end{cytat}
+  
+ \begin{cytat}
+  To są konkretne rzeczy, to jest ZOO po prostu
+ \end{cytat}
+ 
+ \begin{cytat}
+  Torus, to jest torus.
+ \end{cytat}
+ 
+ \begin{twierdzeniebd}
+  Każda grupa zwarta (reduktywna) ma maksymalny torus i wszystkie one są sprzężone. Ponadto sprzężenia torusa wypełniają grupę zwartą.
+ \end{twierdzeniebd}
+ 
+ \begin{twierdzeniebd}
+  Dla $G$ reduktywnej suma sprzężeń torusa jest gęsta w $G$.
+ \end{twierdzeniebd}
+ 
+ Tak się składa, że $G$ działa na $G/H$ przez przesunięcia.
+ 
+ \begin{przyklad}
+  $\mb{P}^n = U(n+1)/(U(1)\times U(n)) = GL(n+1)/H$, gdzie $H$ to macierze w których w pierwszej kolumnie tylko pierwszy wyraz jest niezerowy.
+  
+  Możemy wziąć maksymalny torus $G$ i zauważymy, że jego działanie na $\mb{P}^n$ ma punkty stałe, no i możemy sobie patrzeć na ilorazy przestrzeni przez działanie, w przypadku $\mb{P}^n$ dostaniemy $n$-sympleks.
+ \end{przyklad}
+ 
+ \begin{definicja}[działanie grupy]
+  To takie ciągłe przekształcenie $G \times X \to X$, że $(gh)x=g(hx)$.
+  
+  Jest ono \emph{przechodnie/tranzytywne}, jeśli $\forall_{x,y} \exists_g y=gx$.
+  
+  Jest ono \emph{wolne}, jeśli $gx=x \implies g=1$.
+  
+  Jego \emph{orbita} przez $x$ to $Gx = \{gx: g \in G\}$.
+  
+  Jego \emph{stabilizator/grupa izotropii} w $x$ to $G_x = \{ g \in G: gx=x \}$.
+ \end{definicja}
+ 
+ \begin{uwaga}
+  Przekształcenie $G/G_x \to Gx$, $g \mapsto gx$, jest ciągłe, a jeśli $G$ zwarta, to jest homeomorfizmem.
+ \end{uwaga}
+ 
+ \begin{twierdzeniebd}
+  $G$ algebraiczna, działanie algebraiczne na rozmaitości algebraicznej, to $G/G_x \simeq Gx$ izomorficzne jako rozmaitości algebraiczne.
+ \end{twierdzeniebd}
+ 
+ \begin{uwaga}
+  Jeśli $G$ przemienna, to stabilizatory na jednej orbicie są równe.
+ \end{uwaga}
+ 
+ \begin{definicja}
+  $H \subset G$, to $X^H = \{ x\in X: \forall_{h \in H} hx=x \}$.
+ \end{definicja}
+ 
+ \begin{uwaga}
+  $K \subset H$, to $X^K \supset X^H$.
+  
+  $H \triangleleft G$, to $G/H$ działa na $X^H$.
+ \end{uwaga}
+ 
+ \begin{twierdzenie}
+  $X$ Hausdorffa, $G$ zwarta, to $X/G$ Hausdorffa oraz $X \to X/G$ jest właściwe domknięte.
+ \end{twierdzenie}
+ 
+ \begin{lemat}
+  $X$ Hausdorffa, to każde dwa zbiory $k_1, k_2 \subset X, k_1 \cap k_2 = \varnothing$ zwarte można rozdzielić.
+ \end{lemat}
+ 
+ \begin{definicja}
+  Mówimy, że $x$ i $y$ mają takie same typy orbitowe, jeśli $G_x$ i $G_y$ są sprzężone.
+ \end{definicja}
+ 
+ \begin{twierdzeniebd}
+  $X$ zwarta rozmaitość, $G$ zwarta grupa Lie, działanie gładkie, to istnieje skończenie wiele typów orbitowych.
+ \end{twierdzeniebd}
+ 
+ \begin{definicja}[$G$-ekwiwariantne mapy]
+  $G$ działa na $X$ oraz $Y$, wtedy $\mathrm{Map}_G(X,Y) = \{ f:X \to Y | \forall_g g f(x) = f(gx) \}$.
+ \end{definicja}
+ 
+ \begin{uwaga}
+  $f:G/H \to G/K$, $G$-ekwiwariantne $f$ istnieje, to istnieje $g\in G$ takie, że $gHg^{-1} \subset K$ i wtedy $f(g' H) = g g' g^{-1} K$.
+ \end{uwaga}
+ 
+ \begin{stwierdzenie}
+  $\mathrm{Map}_G(G/H, G/K) = (G/K)^H$.
+ \end{stwierdzenie}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 
+ 
+ 
